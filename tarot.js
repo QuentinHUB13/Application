@@ -71,11 +71,6 @@ const tarotGame = {
     },
 
     validate: function() {
-        // --- C'EST ICI QUE LA SAUVEGARDE SE FAIT ---
-        // On prend une photo de l'état AVANT de changer les scores
-        app.createCheckpoint();
-        // -------------------------------------------
-
         const takerIdx = parseInt(document.getElementById('t-taker').value);
         const partnerIdx = document.getElementById('t-partner') ? parseInt(document.getElementById('t-partner').value) : -1;
         const contract = document.getElementById('t-contract').value;
@@ -98,10 +93,11 @@ const tarotGame = {
         let score = base * this.CONTRATS[contract];
 
         // 3. Gestion du Petit au Bout (Multiplié par le contrat)
+        // Si petit pour l'attaque : on ajoute. Si pour défense : on retire (du point de vue du contrat de base)
         if (petit === 1) score += (10 * this.CONTRATS[contract]);
         if (petit === -1) score -= (10 * this.CONTRATS[contract]);
 
-        // 4. ARRONDI À LA DIZAINE
+        // 4. ARRONDI À LA DIZAINE (Nouveau)
         score = this.round10(score);
 
         // 5. Application de la Chute ou Réussite
@@ -135,6 +131,6 @@ const tarotGame = {
             }
         }
 
-        app.nextRound(); // Sauvegarde automatique et passage à la manche suivante
+        app.nextRound();
     }
 };

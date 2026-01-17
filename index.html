@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" href="icon.png">
     <link rel="apple-touch-icon" href="icon.png">
     <meta name="theme-color" content="#121212">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"rel="stylesheet">
     
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     
@@ -258,16 +258,11 @@
         .sr-zone.sr-expanded .sr-name { font-size: 2rem; }
         .sr-zone.sr-expanded .sr-controls { width: 90%; gap: 15px; }
         .sr-zone.sr-expanded .sr-btn { height: 70px; font-size: 1.8rem; border-radius: 15px; }
-    </style>
+    </style> 
 </head>
 <body>
     <div id="screen-menu">
         <h1>Mes Jeux</h1>
-        <div style="text-align:center; margin-bottom:20px;">
-            <button id="btn-resume" class="btn hidden" onclick="app.resumeGame()" style="background: linear-gradient(45deg, #ff9800, #f57c00); margin-top:15px; width:auto; padding-left:30px; padding-right:30px;">
-                📂 Reprendre la partie en cours 
-            </button>
-        </div>
         <div class="game-card" onclick="app.goToSetup('skullking')"><span class="game-icon">💀</span><h2>Skull King</h2><button class="btn btn-sk">Jouer</button></div>
         <div class="game-card" onclick="app.goToSetup('papayoo')"><span class="game-icon">🎲</span><h2>Papayoo</h2><button class="btn btn-pap">Jouer</button></div>
         <div class="game-card" onclick="app.goToSetup('tarot')"><span class="game-icon">🔮</span><h2>Tarot</h2><button class="btn btn-tarot">Jouer</button></div>
@@ -356,6 +351,3 @@
     </script>
 </body>
 </html>
-
-
-

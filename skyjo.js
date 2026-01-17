@@ -49,8 +49,6 @@ const skyjoGame = {
     },
 
     validate: function() {
-        // 1. CHECKPOINT ! (On sauvegarde l'état AVANT de calculer les nouveaux scores)
-        app.createCheckpoint(); 
         // On boucle sur tous les joueurs pour ajouter leur score de manche
         for (let i = 0; i < app.state.players.length; i++) {
             const input = document.getElementById(`skyjo-in-${i}`);
@@ -66,5 +64,4 @@ const skyjoGame = {
         // On passe à la manche suivante (sans limite de nombre)
         app.nextRound();
     }
-
 };
